@@ -38,11 +38,6 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::loginAction',  '_route' => '_demo_login',);
         }
 
-        // _security_check
-        if ($pathinfo === '/demo/secured/login_check') {
-            return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::securityCheckAction',  '_route' => '_security_check',);
-        }
-
         // _demo_logout
         if ($pathinfo === '/demo/secured/logout') {
             return array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::logoutAction',  '_route' => '_demo_logout',);
@@ -141,6 +136,21 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',  '_route' => '_configurator_final',);
             }
 
+        }
+
+        // _security_login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\SecurityController::loginAction',  '_route' => '_security_login',);
+        }
+
+        // _security_check
+        if ($pathinfo === '/login_check') {
+            return array('_route' => '_security_check');
+        }
+
+        // _security_logout
+        if ($pathinfo === '/logout') {
+            return array('_route' => '_security_logout');
         }
 
         // user

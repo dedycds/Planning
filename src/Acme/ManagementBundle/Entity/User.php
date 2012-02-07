@@ -3,6 +3,7 @@
 namespace Acme\ManagementBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Encoder\MessageDigestPasswordEncoder;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -108,6 +109,15 @@ class User implements UserInterface
      */
     function getSalt()
     {
+        if (null === $this->salt) {
+            $this->salt = md5(sprintf(
+                '%s_%d_%f',
+                uniqid(),
+                rand(0, 99999),
+                microtime(true)
+            ));
+        }
+        
         return $this->salt;
     }
     
@@ -125,7 +135,16 @@ class User implements UserInterface
     function equals(UserInterface $user)
     {
 //        return ($user->getUsername() === $this->getUsername()) && ($user->getPassword() === $this->getPassword());
-        return md5($this->getUsername()) == md5($user->getUsername());
+        if ($this->password !== $user->getPassword()) {
+            return false;
+        }
+ 
+ 
+        if ($this->username !== $user->getUsername()) {
+            return false;
+        }
+ 
+        return true;
     }
 
 
@@ -166,6 +185,9 @@ class User implements UserInterface
      */
     public function setPassword($password)
     {
+        $encoder = new MessageDigestPasswordEncoder('sha1');
+        $password = $encoder->encodePassword($password, $this->getSalt());
+
         $this->password = $password;
     }
 

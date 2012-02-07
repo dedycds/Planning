@@ -15,7 +15,6 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     static private $declaredRouteNames = array(
        '_welcome' => true,
        '_demo_login' => true,
-       '_security_check' => true,
        '_demo_logout' => true,
        'acme_demo_secured_hello' => true,
        '_demo_secured_hello' => true,
@@ -33,6 +32,9 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
+       '_security_login' => true,
+       '_security_check' => true,
+       '_security_logout' => true,
        'user' => true,
        'user_show' => true,
        'user_new' => true,
@@ -112,11 +114,6 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function get_demo_loginRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/login',  ),));
-    }
-
-    private function get_security_checkRouteInfo()
-    {
-        return array(array (), array (  '_controller' => 'Acme\\DemoBundle\\Controller\\SecuredController::securityCheckAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/demo/secured/login_check',  ),));
     }
 
     private function get_demo_logoutRouteInfo()
@@ -202,6 +199,21 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function get_configurator_finalRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
+    }
+
+    private function get_security_loginRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\SecurityController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login',  ),));
+    }
+
+    private function get_security_checkRouteInfo()
+    {
+        return array(array (), array (), array (), array (  0 =>   array (    0 => 'text',    1 => '/login_check',  ),));
+    }
+
+    private function get_security_logoutRouteInfo()
+    {
+        return array(array (), array (), array (), array (  0 =>   array (    0 => 'text',    1 => '/logout',  ),));
     }
 
     private function getuserRouteInfo()
