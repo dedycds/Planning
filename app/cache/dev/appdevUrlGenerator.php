@@ -33,6 +33,54 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
+       'user' => true,
+       'user_show' => true,
+       'user_new' => true,
+       'user_create' => true,
+       'user_edit' => true,
+       'user_update' => true,
+       'user_delete' => true,
+       'status' => true,
+       'status_show' => true,
+       'status_new' => true,
+       'status_create' => true,
+       'status_edit' => true,
+       'status_update' => true,
+       'status_delete' => true,
+       'priority' => true,
+       'priority_show' => true,
+       'priority_new' => true,
+       'priority_create' => true,
+       'priority_edit' => true,
+       'priority_update' => true,
+       'priority_delete' => true,
+       'project' => true,
+       'project_show' => true,
+       'project_new' => true,
+       'project_create' => true,
+       'project_edit' => true,
+       'project_update' => true,
+       'project_delete' => true,
+       'project_category' => true,
+       'project_category_show' => true,
+       'project_category_new' => true,
+       'project_category_create' => true,
+       'project_category_edit' => true,
+       'project_category_update' => true,
+       'project_category_delete' => true,
+       'project_type' => true,
+       'project_type_show' => true,
+       'project_type_new' => true,
+       'project_type_create' => true,
+       'project_type_edit' => true,
+       'project_type_update' => true,
+       'project_type_delete' => true,
+       'task' => true,
+       'task_show' => true,
+       'task_new' => true,
+       'task_create' => true,
+       'task_edit' => true,
+       'task_update' => true,
     );
 
     /**
@@ -154,5 +202,245 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function get_configurator_finalRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
+    }
+
+    private function getuserRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/user',  ),));
+    }
+
+    private function getuser_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/user',  ),));
+    }
+
+    private function getuser_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/user/new',  ),));
+    }
+
+    private function getuser_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/user/create',  ),));
+    }
+
+    private function getuser_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/user',  ),));
+    }
+
+    private function getuser_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/user',  ),));
+    }
+
+    private function getuser_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\UserController::deleteAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/user',  ),));
+    }
+
+    private function getstatusRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/status',  ),));
+    }
+
+    private function getstatus_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/status',  ),));
+    }
+
+    private function getstatus_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/status/new',  ),));
+    }
+
+    private function getstatus_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/status/create',  ),));
+    }
+
+    private function getstatus_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/status',  ),));
+    }
+
+    private function getstatus_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/status',  ),));
+    }
+
+    private function getstatus_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\StatusController::deleteAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/status',  ),));
+    }
+
+    private function getpriorityRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/priority',  ),));
+    }
+
+    private function getpriority_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/priority',  ),));
+    }
+
+    private function getpriority_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/priority/new',  ),));
+    }
+
+    private function getpriority_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/priority/create',  ),));
+    }
+
+    private function getpriority_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/priority',  ),));
+    }
+
+    private function getpriority_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/priority',  ),));
+    }
+
+    private function getpriority_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\PriorityController::deleteAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/priority',  ),));
+    }
+
+    private function getprojectRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/project',  ),));
+    }
+
+    private function getproject_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project',  ),));
+    }
+
+    private function getproject_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/project/new',  ),));
+    }
+
+    private function getproject_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/project/create',  ),));
+    }
+
+    private function getproject_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project',  ),));
+    }
+
+    private function getproject_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project',  ),));
+    }
+
+    private function getproject_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\ProjectController::deleteAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project',  ),));
+    }
+
+    private function getproject_categoryRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/project_category',  ),));
+    }
+
+    private function getproject_category_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_category',  ),));
+    }
+
+    private function getproject_category_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/project_category/new',  ),));
+    }
+
+    private function getproject_category_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/project_category/create',  ),));
+    }
+
+    private function getproject_category_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_category',  ),));
+    }
+
+    private function getproject_category_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_category',  ),));
+    }
+
+    private function getproject_category_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_CategoryController::deleteAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_category',  ),));
+    }
+
+    private function getproject_typeRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/project_type',  ),));
+    }
+
+    private function getproject_type_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_type',  ),));
+    }
+
+    private function getproject_type_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/project_type/new',  ),));
+    }
+
+    private function getproject_type_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/project_type/create',  ),));
+    }
+
+    private function getproject_type_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_type',  ),));
+    }
+
+    private function getproject_type_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_type',  ),));
+    }
+
+    private function getproject_type_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\Project_TypeController::deleteAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/project_type',  ),));
+    }
+
+    private function gettaskRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\TaskController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/task',  ),));
+    }
+
+    private function gettask_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\TaskController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/task',  ),));
+    }
+
+    private function gettask_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\TaskController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/task/new',  ),));
+    }
+
+    private function gettask_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\TaskController::createAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/task/create',  ),));
+    }
+
+    private function gettask_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\TaskController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/task',  ),));
+    }
+
+    private function gettask_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Acme\\ManagementBundle\\Controller\\TaskController::updateAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/task',  ),));
     }
 }

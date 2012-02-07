@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var integer $id
@@ -87,6 +87,11 @@ class User
     function getRoles()
     {
         return $this->getUserRoles()->toArray();
+    }
+    
+    function setUserRoles($role)
+    {
+       $this->user_roles = $role; 
     }
 
     /**

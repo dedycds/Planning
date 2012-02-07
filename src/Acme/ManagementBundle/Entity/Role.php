@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Role
+class Role implements RoleInterface
 {
     /**
      * @var integer $id
@@ -95,4 +95,10 @@ class Role
     {
         $this->createdAt = new DateTime();
     }
+
+    public function getRole()
+    {
+        
+    }
+    public function __toString() { return $this->name; }
 }

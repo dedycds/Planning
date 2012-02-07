@@ -199,4 +199,5 @@ class UserController extends Controller
             ->getForm()
         ;
     }
+    public function __toString() { return $this->username; }
 }
