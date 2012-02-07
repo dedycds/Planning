@@ -1,0 +1,231 @@
+user:
+    pattern:  /user
+    defaults: { _controller: AcmeManagementBundle:User:index }
+
+user_show:
+    pattern:  /user/{id}/show
+    defaults: { _controller: AcmeManagementBundle:User:show }
+    
+user_new:
+    pattern:  /user/new
+    defaults: { _controller: AcmeManagementBundle:User:new }
+
+user_create:
+    pattern:  /user/create
+    defaults: { _controller: AcmeManagementBundle:User:create }
+    requirements:
+        _method:  POST
+
+user_edit:
+    pattern:  /user/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:User:edit }
+
+user_update:
+    pattern:  /user/{id}/update
+    defaults: { _controller: AcmeManagementBundle:User:update }
+    requirements:
+        _method:  POST
+
+user_delete:
+    pattern:  /user/{id}/delete
+    defaults: { _controller: AcmeManagementBundle:User:delete }
+    requirements:
+        _method:  POST
+
+status:
+    pattern:  /status
+    defaults: { _controller: AcmeManagementBundle:Status:index }
+
+status_show:
+    pattern:  /status/{id}/show
+    defaults: { _controller: AcmeManagementBundle:Status:show }
+    
+status_new:
+    pattern:  /status/new
+    defaults: { _controller: AcmeManagementBundle:Status:new }
+
+status_create:
+    pattern:  /status/create
+    defaults: { _controller: AcmeManagementBundle:Status:create }
+    requirements:
+        _method:  POST
+
+status_edit:
+    pattern:  /status/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:Status:edit }
+
+status_update:
+    pattern:  /status/{id}/update
+    defaults: { _controller: AcmeManagementBundle:Status:update }
+    requirements:
+        _method:  POST
+
+status_delete:
+    pattern:  /status/{id}/delete
+    defaults: { _controller: AcmeManagementBundle:Status:delete }
+    requirements:
+        _method:  POST
+
+priority:
+    pattern:  /priority
+    defaults: { _controller: AcmeManagementBundle:Priority:index }
+
+priority_show:
+    pattern:  /priority/{id}/show
+    defaults: { _controller: AcmeManagementBundle:Priority:show }
+    
+priority_new:
+    pattern:  /priority/new
+    defaults: { _controller: AcmeManagementBundle:Priority:new }
+
+priority_create:
+    pattern:  /priority/create
+    defaults: { _controller: AcmeManagementBundle:Priority:create }
+    requirements:
+        _method:  POST
+
+priority_edit:
+    pattern:  /priority/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:Priority:edit }
+
+priority_update:
+    pattern:  /priority/{id}/update
+    defaults: { _controller: AcmeManagementBundle:Priority:update }
+    requirements:
+        _method:  POST
+
+priority_delete:
+    pattern:  /priority/{id}/delete
+    defaults: { _controller: AcmeManagementBundle:Priority:delete }
+    requirements:
+        _method:  POST
+
+project:
+    pattern:  /project
+    defaults: { _controller: AcmeManagementBundle:Project:index }
+
+project_show:
+    pattern:  /project/{id}/show
+    defaults: { _controller: AcmeManagementBundle:Project:show }
+    
+project_new:
+    pattern:  /project/new
+    defaults: { _controller: AcmeManagementBundle:Project:new }
+
+project_create:
+    pattern:  /project/create
+    defaults: { _controller: AcmeManagementBundle:Project:create }
+    requirements:
+        _method:  POST
+
+project_edit:
+    pattern:  /project/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:Project:edit }
+
+project_update:
+    pattern:  /project/{id}/update
+    defaults: { _controller: AcmeManagementBundle:Project:update }
+    requirements:
+        _method:  POST
+
+project_delete:
+    pattern:  /project/{id}/delete
+    defaults: { _controller: AcmeManagementBundle:Project:delete }
+    requirements:
+        _method:  POST
+
+project_category:
+    pattern:  /project_category
+    defaults: { _controller: AcmeManagementBundle:Project_Category:index }
+
+project_category_show:
+    pattern:  /project_category/{id}/show
+    defaults: { _controller: AcmeManagementBundle:Project_Category:show }
+    
+project_category_new:
+    pattern:  /project_category/new
+    defaults: { _controller: AcmeManagementBundle:Project_Category:new }
+
+project_category_create:
+    pattern:  /project_category/create
+    defaults: { _controller: AcmeManagementBundle:Project_Category:create }
+    requirements:
+        _method:  POST
+
+project_category_edit:
+    pattern:  /project_category/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:Project_Category:edit }
+
+project_category_update:
+    pattern:  /project_category/{id}/update
+    defaults: { _controller: AcmeManagementBundle:Project_Category:update }
+    requirements:
+        _method:  POST
+
+project_category_delete:
+    pattern:  /project_category/{id}/delete
+    defaults: { _controller: AcmeManagementBundle:Project_Category:delete }
+    requirements:
+        _method:  POST
+
+project_type:
+    pattern:  /project_type
+    defaults: { _controller: AcmeManagementBundle:Project_Type:index }
+
+project_type_show:
+    pattern:  /project_type/{id}/show
+    defaults: { _controller: AcmeManagementBundle:Project_Type:show }
+    
+project_type_new:
+    pattern:  /project_type/new
+    defaults: { _controller: AcmeManagementBundle:Project_Type:new }
+
+project_type_create:
+    pattern:  /project_type/create
+    defaults: { _controller: AcmeManagementBundle:Project_Type:create }
+    requirements:
+        _method:  POST
+
+project_type_edit:
+    pattern:  /project_type/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:Project_Type:edit }
+
+project_type_update:
+    pattern:  /project_type/{id}/update
+    defaults: { _controller: AcmeManagementBundle:Project_Type:update }
+    requirements:
+        _method:  POST
+
+project_type_delete:
+    pattern:  /project_type/{id}/delete
+    defaults: { _controller: AcmeManagementBundle:Project_Type:delete }
+    requirements:
+        _method:  POST
+
+task:
+    pattern:  /task
+    defaults: { _controller: AcmeManagementBundle:Task:index }
+
+task_show:
+    pattern:  /task/{id}/show
+    defaults: { _controller: AcmeManagementBundle:Task:show }
+    
+task_new:
+    pattern:  /task/new
+    defaults: { _controller: AcmeManagementBundle:Task:new }
+
+task_create:
+    pattern:  /task/create
+    defaults: { _controller: AcmeManagementBundle:Task:create }
+    requirements:
+        _method:  POST
+
+task_edit:
+    pattern:  /task/{id}/edit
+    defaults: { _controller: AcmeManagementBundle:Task:edit }
+
+task_update:
+    pattern:  /task/{id}/update
+    defaults: { _controller: AcmeManagementBundle:Task:update }
+    requirements:
+        _method:  POST
