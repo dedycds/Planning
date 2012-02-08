@@ -58,17 +58,6 @@ class User implements UserInterface
      * @ORM\OneToMany(targetEntity="Task", mappedBy="user")
      */
     protected $tasks;
-
-    /**
-     * Constructs a new instance of User
-     */
-    public function __construct()
-    {
-        $this->projects = new ArrayCollection();
-        $this->tasks = new ArrayCollection();
-    }
-    
-    public function __toString() { return $this->username; }
     
     /**
      * Gets the user roles.
@@ -79,6 +68,20 @@ class User implements UserInterface
     {
         return $this->user_roles;
     }
+
+    /**
+     * Constructs a new instance of User
+     */
+    public function __construct()
+    {
+        $this->projects = new ArrayCollection();
+        $this->tasks = new ArrayCollection();
+        $this->user_roles = new ArrayCollection();
+    }
+    
+    public function __toString() { return $this->username; }
+    
+    
     
     /**
      * Gets an array of roles.
