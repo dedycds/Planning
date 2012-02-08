@@ -3,9 +3,9 @@ security:
         #Symfony\Component\Security\Core\User\User: plaintext
         Acme\ManagementBundle\Entity\User: sha1
 
-    #role_hierarchy:
-    #    ROLE_ADMIN:       ROLE_USER
-    #    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
         #in_memory:
