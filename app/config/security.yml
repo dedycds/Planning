@@ -5,7 +5,7 @@ security:
 
     role_hierarchy:
         ROLE_ADMIN:       [ROLE_USER, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
         #in_memory:
@@ -48,7 +48,10 @@ security:
     access_control:
         #- { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/task, roles: ROLE_CLIENT}
-        - { path: ^/user, roles: ROLE_ADMIN}
+        - { path: ^/task, roles: ROLE_USER}
+        - { path: ^/project, roles: ROLE_ADMIN}
+        - { path: ^/project_category, roles: ROLE_ADMIN}
+        - { path: ^/project_type, roles: ROLE_ADMIN}
+        - { path: ^/user, roles: ROLE_SUPER_ADMIN}
         
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
