@@ -18,9 +18,9 @@ security:
         
 
     firewalls:
-         public:
+         secured_area:
             pattern: /.*
-            anonymous: true
+            anonymous: ~
             form_login: { provider: default }
             logout: true
 
@@ -46,6 +46,9 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: /.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        #- { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/task, roles: ROLE_CLIENT}
+        - { path: ^/user, roles: ROLE_ADMIN}
+        
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
