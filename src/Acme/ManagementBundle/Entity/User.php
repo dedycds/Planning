@@ -3,7 +3,7 @@
 namespace Acme\ManagementBundle\Entity;
 
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Encoder\MessageDigestPasswordEncoder;
+use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -185,8 +185,6 @@ class User implements UserInterface
      */
     public function setPassword($password)
     {
-        $encoder = new MessageDigestPasswordEncoder('sha1');
-        $password = $encoder->encodePassword($password, $this->getSalt());
 
         $this->password = $password;
     }
