@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Acme\ManagementBundle\Entity\Task;
 use Acme\ManagementBundle\Form\TaskType;
+use Symfony\Component\Security\Core\SecurityContextInterface;
 
 /**
  * Task controller.
@@ -25,8 +26,10 @@ class TaskController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-
-        $entities = $em->getRepository('AcmeManagementBundle:Task')->findAll();
+        $user = $this->get('security.context')->getToken()->getUser();
+        $entities = $em->getRepository('AcmeManagementBundle:Task')->findBy($name);
+        echo $entities; exit();
+      
 
         return array('entities' => $entities);
     }

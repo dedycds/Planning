@@ -86,7 +86,7 @@ class UserController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            
+            // encode the password
             $factory = $this->get('security.encoder_factory');
 
             $encoder = $factory->getEncoder($entity);
@@ -157,6 +157,12 @@ class UserController extends Controller
         $editForm->bindRequest($request);
 
         if ($editForm->isValid()) {
+            // encode the password
+            $factory = $this->get('security.encoder_factory');
+
+            $encoder = $factory->getEncoder($entity);
+            $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+            $entity->setPassword($password);
             $em->persist($entity);
             $em->flush();
 
