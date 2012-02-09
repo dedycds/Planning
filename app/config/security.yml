@@ -4,7 +4,7 @@ security:
         Acme\ManagementBundle\Entity\User: sha1
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
+        #ROLE_ADMIN:       [ROLE_USER, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
@@ -48,10 +48,13 @@ security:
     access_control:
         #- { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/task, roles: ROLE_USER}
-        - { path: ^/project, roles: ROLE_ADMIN}
-        - { path: ^/project_category, roles: ROLE_ADMIN}
-        - { path: ^/project_type, roles: ROLE_ADMIN}
-        - { path: ^/user, roles: ROLE_SUPER_ADMIN}
+        #controling access control for each user
+        - { path: ^/task, roles: ROLE_USER }
+        - { path: ^/task$, roles: [ROLE_ADMIN, ROLE_CLIENT] } #just read for user who has ROLE_ADMIN or ROLE_CLIENT
+        - { path: ^/project$, roles: [ROLE_CLIENT, ROLE_USER] }
+        - { path: ^/project, roles: ROLE_ADMIN }
+        - { path: ^/project_category, roles: ROLE_ADMIN }
+        - { path: ^/project_type, roles: ROLE_ADMIN }
+        - { path: ^/user, roles: ROLE_SUPER_ADMIN }
         
         #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
