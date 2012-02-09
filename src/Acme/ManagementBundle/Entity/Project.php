@@ -4,6 +4,8 @@ namespace Acme\ManagementBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+//for validating input
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Acme\ManagementBundle\Entity\Project
@@ -26,6 +28,8 @@ class Project
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\MaxLength(30)
      */
     private $name;
 
@@ -33,6 +37,7 @@ class Project
      * @var date $start_date
      *
      * @ORM\Column(name="start_date", type="date")
+     * @Assert\NotBlank()
      */
     private $start_date;
 
@@ -40,6 +45,7 @@ class Project
      * @var date $end_date
      *
      * @ORM\Column(name="end_date", type="date")
+     * @Assert\Date()
      */
     private $end_date;
 
@@ -47,6 +53,7 @@ class Project
      * @var text $description
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 
@@ -54,6 +61,7 @@ class Project
      * @var string $link_google
      *
      * @ORM\Column(name="link_google", type="string", length=255)
+     * @Assert\Url()
      */
     private $link_google;
 
@@ -61,6 +69,7 @@ class Project
      * @var string $link_draft
      *
      * @ORM\Column(name="link_draft", type="string", length=255)
+     * @Assert\Url()
      */
     private $link_draft;
 
@@ -124,7 +133,7 @@ class Project
     {
         $this->end_date = $endDate;
     }
-
+    
     /**
      * Get end_date
      *

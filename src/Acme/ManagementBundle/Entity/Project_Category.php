@@ -4,12 +4,15 @@ namespace Acme\ManagementBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+//for validating input
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Acme\ManagementBundle\Entity\Project_Category
  *
  * @ORM\Table()
  * @ORM\Entity
+ * 
  */
 class Project_Category
 {
@@ -26,6 +29,8 @@ class Project_Category
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * Assert used for validating
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -33,6 +38,7 @@ class Project_Category
      * @var text $description
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 

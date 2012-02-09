@@ -3,6 +3,7 @@
 namespace Acme\ManagementBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Acme\ManagementBundle\Entity\Task
@@ -25,6 +26,8 @@ class Task
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
+     * 
      */
     private $name;
 
@@ -32,6 +35,7 @@ class Task
      * @var date $date
      *
      * @ORM\Column(name="date", type="date")
+     * @Assert\Date()
      */
     private $date;
 
@@ -39,6 +43,7 @@ class Task
      * @var time $time_start
      *
      * @ORM\Column(name="time_start", type="time")
+     * @Assert\time()
      */
     private $time_start;
 
@@ -46,6 +51,7 @@ class Task
      * @var time $time_end
      *
      * @ORM\Column(name="time_end", type="time")
+     * @Assert\time()
      */
     private $time_end;
 
@@ -53,6 +59,7 @@ class Task
      * @var text $description
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\NotBlank()
      */
     private $description;
 

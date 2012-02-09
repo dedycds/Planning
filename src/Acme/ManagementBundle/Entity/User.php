@@ -6,6 +6,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+//for validdating
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Acme\ManagementBundle\Entity\User
@@ -15,6 +17,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User implements UserInterface
 {
+    
+    
     /**
      * @var integer $id
      *
@@ -28,6 +32,8 @@ class User implements UserInterface
      * @var string $username
      *
      * @ORM\Column(name="username", type="string", length=255)
+     * @Assert\MinLength(4)
+     * @Assert\MaxLength(8)
      */
     private $username;
 
@@ -35,6 +41,7 @@ class User implements UserInterface
      * @var string $password
      *
      * @ORM\Column(name="password", type="string", length=255)
+     * @Assert\MinLength(5)
      */
     private $password;
     
@@ -59,6 +66,8 @@ class User implements UserInterface
      */
     protected $tasks;
     
+
+   
     /**
      * Gets the user roles.
      *
