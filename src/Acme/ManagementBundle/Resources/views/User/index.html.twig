@@ -5,8 +5,6 @@
         <tr>
             <th>Id</th>
             <th>Username</th>
-            <th>Password</th>
-            <th>Salt</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -15,8 +13,6 @@
         <tr>
             <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.username }}</td>
-            <td>{{ entity.password }}</td>
-            <td>{{ entity.salt }}</td>
             <td>
                 <ul>
                     <li>

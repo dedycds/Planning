@@ -10,6 +10,11 @@ use Acme\ManagementBundle\Entity\Task;
 use Acme\ManagementBundle\Form\TaskType;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony\Component\Security\Acl\Permission\MaskBuilder;
+
 /**
  * Task controller.
  *
@@ -26,9 +31,15 @@ class TaskController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $user = $this->get('security.context')->getToken()->getUser();
+        // retrieving the security identity of the currently logged-in user
+        $securityContext = $this->get('security.context');
+        $user = $securityContext->getToken()->getUser();
+        $securityIdentity = UserSecurityIdentity::fromAccount($user);
+        
+        echo $securityIdentity; exit();
+                
         $entities = $em->getRepository('AcmeManagementBundle:Task')->findBy($name);
-        echo $entities; exit();
+        
       
 
         return array('entities' => $entities);

@@ -6,7 +6,7 @@
 
 
 {% if error %}
-    <div>{{ error }}</div>
+    <div>{{ error.message }}</div>
 {% endif %}
 
 <form action="{{ path('_security_check') }}" method="POST">
